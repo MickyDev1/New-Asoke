@@ -1,55 +1,57 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import Image from "next/image"
-import Link from "next/link"
-import { Heart, Star, ShoppingCart } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Card, CardContent } from "@/components/ui/card"
-import { useCart } from "@/lib/cart-context"
-import { useToast } from "@/hooks/use-toast"
+import Image from "next/image";
+import Link from "next/link";
+import { Heart, Star, ShoppingCart } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
+import { useCart } from "@/lib/cart-context";
+import { useToast } from "@/hooks/use-toast";
 
 interface Product {
-  id: string
-  name: string
-  price: number
-  originalPrice?: number
-  image: string
-  category: string
-  rating: number
-  reviewCount: number
-  isNew?: boolean
-  isFeatured?: boolean
+  id: string;
+  name: string;
+  price: number;
+  originalPrice?: number;
+  image: string;
+  category: string;
+  rating: number;
+  reviewCount: number;
+  isNew?: boolean;
+  isFeatured?: boolean;
 }
 
 interface ProductCardProps {
-  product: Product
+  product: Product;
 }
 
 export default function ProductCard({ product }: ProductCardProps) {
-  const { addItem } = useCart()
-  const { toast } = useToast()
+  const { addItem } = useCart();
+  const { toast } = useToast();
 
   const handleAddToCart = (e: React.MouseEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     addItem({
       id: product.id,
       name: product.name,
       price: product.price,
       image: product.image,
       quantity: 1,
-    })
+    });
     toast({
       title: "Added to cart",
       description: `${product.name} has been added to your cart.`,
-    })
-  }
+    });
+  };
 
   const discountPercentage = product.originalPrice
-    ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)
-    : 0
+    ? Math.round(
+        ((product.originalPrice - product.price) / product.originalPrice) * 100
+      )
+    : 0;
 
   return (
     <Card className="group hover:shadow-lg transition-shadow">
@@ -65,8 +67,14 @@ export default function ProductCard({ product }: ProductCardProps) {
 
             {/* Badges */}
             <div className="absolute top-2 left-2 flex flex-col gap-1">
-              {product.isNew && <Badge className="bg-green-500 hover:bg-green-600">New</Badge>}
-              {discountPercentage > 0 && <Badge className="bg-red-500 hover:bg-red-600">-{discountPercentage}%</Badge>}
+              {product.isNew && (
+                <Badge className="bg-green-500 hover:bg-green-600">New</Badge>
+              )}
+              {discountPercentage > 0 && (
+                <Badge className="bg-red-500 hover:bg-red-600">
+                  -{discountPercentage}%
+                </Badge>
+              )}
             </div>
 
             {/* Wishlist button */}
@@ -98,24 +106,32 @@ export default function ProductCard({ product }: ProductCardProps) {
                   <Star
                     key={i}
                     className={`h-4 w-4 ${
-                      i < Math.floor(product.rating) ? "fill-yellow-400 text-yellow-400" : "text-gray-300"
+                      i < Math.floor(product.rating)
+                        ? "fill-yellow-400 text-yellow-400"
+                        : "text-gray-300"
                     }`}
                   />
                 ))}
               </div>
-              <span className="text-sm text-gray-500">({product.reviewCount})</span>
+              <span className="text-sm text-gray-500">
+                ({product.reviewCount})
+              </span>
             </div>
 
             {/* Price */}
             <div className="flex items-center gap-2">
-              <span className="text-xl font-bold">₦{product.price.toLocaleString()}</span>
+              <span className="text-xl font-bold">
+                ₦{product.price.toLocaleString()}
+              </span>
               {product.originalPrice && (
-                <span className="text-sm text-gray-500 line-through">₦{product.originalPrice.toLocaleString()}</span>
+                <span className="text-sm text-gray-500 line-through">
+                  ₦{product.originalPrice.toLocaleString()}
+                </span>
               )}
             </div>
           </Link>
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }

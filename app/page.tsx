@@ -1,15 +1,18 @@
-import { Suspense } from "react"
-import Header from "@/components/layout/header"
-import Footer from "@/components/layout/footer"
-import HeroSection from "@/components/home/hero-section"
-import FeaturedProducts from "@/components/home/featured-products"
-import CategorySection from "@/components/home/category-section"
-import TestimonialsSection from "@/components/home/testimonials-section"
-import NewsletterSection from "@/components/home/newsletter-section"
-import { getFeaturedProducts, getCategories } from "@/lib/api"
+import { Suspense } from "react";
+import Header from "@/components/layout/header";
+import Footer from "@/components/layout/footer";
+import HeroSection from "@/components/home/hero-section";
+import FeaturedProducts from "@/components/home/featured-products";
+import CategorySection from "@/components/home/category-section";
+import TestimonialsSection from "@/components/home/testimonials-section";
+import NewsletterSection from "@/components/home/newsletter-section";
+import { getFeaturedProducts, getCategories } from "@/lib/api";
 
 export default async function HomePage() {
-  const [featuredProducts, categories] = await Promise.all([getFeaturedProducts(), getCategories()])
+  const [featuredProducts, categories] = await Promise.all([
+    getFeaturedProducts(),
+    getCategories(),
+  ]);
 
   return (
     <div className="min-h-screen">
@@ -25,5 +28,5 @@ export default async function HomePage() {
       </main>
       <Footer />
     </div>
-  )
+  );
 }

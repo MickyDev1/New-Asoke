@@ -1,17 +1,18 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Image from "next/image"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const slides = [
   {
     id: 1,
     title: "Premium Aso-Oke Collection",
     subtitle: "Authentic Nigerian Traditional Wear",
-    description: "Discover our handcrafted Aso-Oke fabrics and traditional attire",
+    description:
+      "Discover our handcrafted Aso-Oke fabrics and traditional attire",
     image: "/placeholder.svg?height=600&width=1200",
     cta: "Shop Aso-Oke",
     link: "/shop?category=aso-oke",
@@ -34,25 +35,25 @@ const slides = [
     cta: "Shop Shoes",
     link: "/shop?category=shoes",
   },
-]
+];
 
 export default function HeroSection() {
-  const [currentSlide, setCurrentSlide] = useState(0)
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length)
-    }, 5000)
-    return () => clearInterval(timer)
-  }, [])
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length)
-  }
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
-  }
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  };
 
   return (
     <section className="relative h-[70vh] md:h-[80vh] overflow-hidden">
@@ -60,7 +61,11 @@ export default function HeroSection() {
         <div
           key={slide.id}
           className={`absolute inset-0 transition-transform duration-500 ease-in-out ${
-            index === currentSlide ? "translate-x-0" : index < currentSlide ? "-translate-x-full" : "translate-x-full"
+            index === currentSlide
+              ? "translate-x-0"
+              : index < currentSlide
+              ? "-translate-x-full"
+              : "translate-x-full"
           }`}
         >
           <Image
@@ -73,9 +78,15 @@ export default function HeroSection() {
           <div className="absolute inset-0 bg-black/40" />
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="text-center text-white max-w-4xl px-4">
-              <h2 className="text-sm md:text-base font-medium mb-2 opacity-90">{slide.subtitle}</h2>
-              <h1 className="text-4xl md:text-6xl font-bold mb-4">{slide.title}</h1>
-              <p className="text-lg md:text-xl mb-8 opacity-90 max-w-2xl mx-auto">{slide.description}</p>
+              <h2 className="text-sm md:text-base font-medium mb-2 opacity-90">
+                {slide.subtitle}
+              </h2>
+              <h1 className="text-4xl md:text-6xl font-bold mb-4">
+                {slide.title}
+              </h1>
+              <p className="text-lg md:text-xl mb-8 opacity-90 max-w-2xl mx-auto">
+                {slide.description}
+              </p>
               <Link href={slide.link}>
                 <Button size="lg" className="text-lg px-8 py-3">
                   {slide.cta}
@@ -106,10 +117,12 @@ export default function HeroSection() {
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`w-3 h-3 rounded-full transition-colors ${index === currentSlide ? "bg-white" : "bg-white/50"}`}
+            className={`w-3 h-3 rounded-full transition-colors ${
+              index === currentSlide ? "bg-white" : "bg-white/50"
+            }`}
           />
         ))}
       </div>
     </section>
-  )
+  );
 }

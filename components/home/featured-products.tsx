@@ -1,22 +1,22 @@
-import ProductCard from "@/components/products/product-card"
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
+import ProductCard from "@/components/products/product-card";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 interface Product {
-  id: string
-  name: string
-  price: number
-  originalPrice?: number
-  image: string
-  category: string
-  rating: number
-  reviewCount: number
-  isNew?: boolean
-  isFeatured?: boolean
+  id: string;
+  name: string;
+  price: number;
+  originalPrice?: number;
+  image: string;
+  category: string;
+  rating: number;
+  reviewCount: number;
+  isNew?: boolean;
+  isFeatured?: boolean;
 }
 
 interface FeaturedProductsProps {
-  products: Product[]
+  products: Product[];
 }
 
 export default function FeaturedProducts({ products }: FeaturedProductsProps) {
@@ -24,9 +24,12 @@ export default function FeaturedProducts({ products }: FeaturedProductsProps) {
     <section className="py-16">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Products</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Featured Products
+          </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Handpicked items from our latest collection. Quality, style, and authenticity guaranteed.
+            Handpicked items from our latest collection. Quality, style, and
+            authenticity guaranteed.
           </p>
         </div>
 
@@ -45,5 +48,5 @@ export default function FeaturedProducts({ products }: FeaturedProductsProps) {
         </div>
       </div>
     </section>
-  )
+  );
 }

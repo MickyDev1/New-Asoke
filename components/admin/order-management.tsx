@@ -16,7 +16,7 @@ export default function OrderManagement() {
       email: "john@example.com",
       total: 85000,
       status: "pending",
-      date: "2024-01-15",
+      date: "2025-01-15",
       items: 2,
     },
     {
@@ -25,7 +25,7 @@ export default function OrderManagement() {
       email: "jane@example.com",
       total: 35000,
       status: "shipped",
-      date: "2024-01-14",
+      date: "2025-01-14",
       items: 1,
     },
     {
@@ -34,7 +34,7 @@ export default function OrderManagement() {
       email: "mike@example.com",
       total: 120000,
       status: "delivered",
-      date: "2024-01-13",
+      date: "2025-01-13",
       items: 3,
     },
   ])

@@ -1,12 +1,19 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Plus, Edit, Trash2, Eye } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
-import Image from "next/image"
+import { useState } from "react";
+import { Plus, Edit, Trash2, Eye } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import Image from "next/image";
 
 export default function ProductManagement() {
   // Mock products data
@@ -38,7 +45,7 @@ export default function ProductManagement() {
       status: "out_of_stock",
       image: "/placeholder.svg?height=60&width=60",
     },
-  ])
+  ]);
 
   return (
     <Card>
@@ -88,8 +95,8 @@ export default function ProductManagement() {
                       product.status === "active"
                         ? "default"
                         : product.status === "out_of_stock"
-                          ? "destructive"
-                          : "secondary"
+                        ? "destructive"
+                        : "secondary"
                     }
                   >
                     {product.status.replace("_", " ")}
@@ -114,5 +121,5 @@ export default function ProductManagement() {
         </Table>
       </CardContent>
     </Card>
-  )
+  );
 }

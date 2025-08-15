@@ -1,41 +1,41 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Image from "next/image"
-import { Star, Heart, Share2, ShoppingCart, Minus, Plus } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { useCart } from "@/lib/cart-context"
-import { useToast } from "@/hooks/use-toast"
+import { useState } from "react";
+import Image from "next/image";
+import { Star, Heart, Share2, ShoppingCart, Minus, Plus } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useCart } from "@/lib/cart-context";
+import { useToast } from "@/hooks/use-toast";
 
 interface Product {
-  id: string
-  name: string
-  description: string
-  price: number
-  originalPrice?: number
-  images: string[]
-  category: string
-  rating: number
-  reviewCount: number
-  inStock: boolean
-  sizes?: string[]
-  colors?: string[]
-  specifications?: Record<string, string>
+  id: string;
+  name: string;
+  description: string;
+  price: number;
+  originalPrice?: number;
+  images: string[];
+  category: string;
+  rating: number;
+  reviewCount: number;
+  inStock: boolean;
+  sizes?: string[];
+  colors?: string[];
+  specifications?: Record<string, string>;
 }
 
 interface ProductDetailsProps {
-  product: Product
+  product: Product;
 }
 
 export default function ProductDetails({ product }: ProductDetailsProps) {
-  const [selectedImage, setSelectedImage] = useState(0)
-  const [selectedSize, setSelectedSize] = useState("")
-  const [selectedColor, setSelectedColor] = useState("")
-  const [quantity, setQuantity] = useState(1)
-  const { addItem } = useCart()
-  const { toast } = useToast()
+  const [selectedImage, setSelectedImage] = useState(0);
+  const [selectedSize, setSelectedSize] = useState("");
+  const [selectedColor, setSelectedColor] = useState("");
+  const [quantity, setQuantity] = useState(1);
+  const { addItem } = useCart();
+  const { toast } = useToast();
 
   const handleAddToCart = () => {
     addItem({
@@ -46,16 +46,18 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
       quantity,
       size: selectedSize,
       color: selectedColor,
-    })
+    });
     toast({
       title: "Added to cart",
       description: `${product.name} has been added to your cart.`,
-    })
-  }
+    });
+  };
 
   const discountPercentage = product.originalPrice
-    ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)
-    : 0
+    ? Math.round(
+        ((product.originalPrice - product.price) / product.originalPrice) * 100
+      )
+    : 0;
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -71,7 +73,9 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
               className="object-cover"
             />
             {discountPercentage > 0 && (
-              <Badge className="absolute top-4 left-4 bg-red-500 hover:bg-red-600">-{discountPercentage}%</Badge>
+              <Badge className="absolute top-4 left-4 bg-red-500 hover:bg-red-600">
+                -{discountPercentage}%
+              </Badge>
             )}
           </div>
 
@@ -83,7 +87,9 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
                   key={index}
                   onClick={() => setSelectedImage(index)}
                   className={`flex-shrink-0 w-20 h-20 relative rounded-lg overflow-hidden border-2 ${
-                    selectedImage === index ? "border-primary" : "border-gray-200"
+                    selectedImage === index
+                      ? "border-primary"
+                      : "border-gray-200"
                   }`}
                 >
                   <Image
@@ -111,7 +117,9 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
                   <Star
                     key={i}
                     className={`h-5 w-5 ${
-                      i < Math.floor(product.rating) ? "fill-yellow-400 text-yellow-400" : "text-gray-300"
+                      i < Math.floor(product.rating)
+                        ? "fill-yellow-400 text-yellow-400"
+                        : "text-gray-300"
                     }`}
                   />
                 ))}
@@ -123,9 +131,13 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
 
             {/* Price */}
             <div className="flex items-center gap-3 mb-6">
-              <span className="text-3xl font-bold">₦{product.price.toLocaleString()}</span>
+              <span className="text-3xl font-bold">
+                ₦{product.price.toLocaleString()}
+              </span>
               {product.originalPrice && (
-                <span className="text-xl text-gray-500 line-through">₦{product.originalPrice.toLocaleString()}</span>
+                <span className="text-xl text-gray-500 line-through">
+                  ₦{product.originalPrice.toLocaleString()}
+                </span>
               )}
             </div>
           </div>
@@ -181,7 +193,11 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
                 <Minus className="h-4 w-4" />
               </Button>
               <span className="w-12 text-center font-semibold">{quantity}</span>
-              <Button variant="outline" size="sm" onClick={() => setQuantity(quantity + 1)}>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setQuantity(quantity + 1)}
+              >
                 <Plus className="h-4 w-4" />
               </Button>
             </div>
@@ -189,17 +205,30 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
 
           {/* Add to Cart */}
           <div className="space-y-3">
-            <Button size="lg" className="w-full" onClick={handleAddToCart} disabled={!product.inStock}>
+            <Button
+              size="lg"
+              className="w-full"
+              onClick={handleAddToCart}
+              disabled={!product.inStock}
+            >
               <ShoppingCart className="h-5 w-5 mr-2" />
               {product.inStock ? "Add to Cart" : "Out of Stock"}
             </Button>
 
             <div className="flex gap-3">
-              <Button variant="outline" size="lg" className="flex-1 bg-transparent">
+              <Button
+                variant="outline"
+                size="lg"
+                className="flex-1 bg-transparent"
+              >
                 <Heart className="h-5 w-5 mr-2" />
                 Wishlist
               </Button>
-              <Button variant="outline" size="lg" className="flex-1 bg-transparent">
+              <Button
+                variant="outline"
+                size="lg"
+                className="flex-1 bg-transparent"
+              >
                 <Share2 className="h-5 w-5 mr-2" />
                 Share
               </Button>
@@ -208,8 +237,14 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
 
           {/* Stock Status */}
           <div className="flex items-center gap-2">
-            <div className={`w-3 h-3 rounded-full ${product.inStock ? "bg-green-500" : "bg-red-500"}`} />
-            <span className="text-sm">{product.inStock ? "In Stock" : "Out of Stock"}</span>
+            <div
+              className={`w-3 h-3 rounded-full ${
+                product.inStock ? "bg-green-500" : "bg-red-500"
+              }`}
+            />
+            <span className="text-sm">
+              {product.inStock ? "In Stock" : "Out of Stock"}
+            </span>
           </div>
         </div>
       </div>
@@ -225,7 +260,9 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
 
           <TabsContent value="description" className="mt-6">
             <div className="prose max-w-none">
-              <p className="text-gray-700 leading-relaxed">{product.description}</p>
+              <p className="text-gray-700 leading-relaxed">
+                {product.description}
+              </p>
             </div>
           </TabsContent>
 
@@ -243,10 +280,12 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
           </TabsContent>
 
           <TabsContent value="reviews" className="mt-6">
-            <div className="text-center py-8 text-gray-500">Reviews coming soon...</div>
+            <div className="text-center py-8 text-gray-500">
+              Reviews coming soon...
+            </div>
           </TabsContent>
         </Tabs>
       </div>
     </div>
-  )
+  );
 }

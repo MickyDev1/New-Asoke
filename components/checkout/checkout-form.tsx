@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { useForm } from "react-hook-form"
-import { zodResolver } from "@hookform/resolvers/zod"
-import * as z from "zod"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const checkoutSchema = z.object({
   firstName: z.string().min(2, "First name is required"),
@@ -22,17 +22,20 @@ const checkoutSchema = z.object({
   zipCode: z.string().min(5, "ZIP code is required"),
   paymentMethod: z.enum(["card", "bank_transfer", "pay_on_delivery"]),
   specialInstructions: z.string().optional(),
-})
+});
 
-type CheckoutFormData = z.infer<typeof checkoutSchema>
+type CheckoutFormData = z.infer<typeof checkoutSchema>;
 
 interface CheckoutFormProps {
-  onSubmit: (data: CheckoutFormData) => void
-  isProcessing: boolean
+  onSubmit: (data: CheckoutFormData) => void;
+  isProcessing: boolean;
 }
 
-export default function CheckoutForm({ onSubmit, isProcessing }: CheckoutFormProps) {
-  const [paymentMethod, setPaymentMethod] = useState("card")
+export default function CheckoutForm({
+  onSubmit,
+  isProcessing,
+}: CheckoutFormProps) {
+  const [paymentMethod, setPaymentMethod] = useState("card");
 
   const {
     register,
@@ -44,12 +47,12 @@ export default function CheckoutForm({ onSubmit, isProcessing }: CheckoutFormPro
     defaultValues: {
       paymentMethod: "card",
     },
-  })
+  });
 
   const handlePaymentMethodChange = (value: string) => {
-    setPaymentMethod(value)
-    setValue("paymentMethod", value as any)
-  }
+    setPaymentMethod(value);
+    setValue("paymentMethod", value as any);
+  };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
@@ -62,26 +65,59 @@ export default function CheckoutForm({ onSubmit, isProcessing }: CheckoutFormPro
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <Label htmlFor="firstName">First Name</Label>
-              <Input id="firstName" {...register("firstName")} className={errors.firstName ? "border-red-500" : ""} />
-              {errors.firstName && <p className="text-red-500 text-sm mt-1">{errors.firstName.message}</p>}
+              <Input
+                id="firstName"
+                {...register("firstName")}
+                className={errors.firstName ? "border-red-500" : ""}
+              />
+              {errors.firstName && (
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.firstName.message}
+                </p>
+              )}
             </div>
             <div>
               <Label htmlFor="lastName">Last Name</Label>
-              <Input id="lastName" {...register("lastName")} className={errors.lastName ? "border-red-500" : ""} />
-              {errors.lastName && <p className="text-red-500 text-sm mt-1">{errors.lastName.message}</p>}
+              <Input
+                id="lastName"
+                {...register("lastName")}
+                className={errors.lastName ? "border-red-500" : ""}
+              />
+              {errors.lastName && (
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.lastName.message}
+                </p>
+              )}
             </div>
           </div>
 
           <div>
             <Label htmlFor="email">Email</Label>
-            <Input id="email" type="email" {...register("email")} className={errors.email ? "border-red-500" : ""} />
-            {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
+            <Input
+              id="email"
+              type="email"
+              {...register("email")}
+              className={errors.email ? "border-red-500" : ""}
+            />
+            {errors.email && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.email.message}
+              </p>
+            )}
           </div>
 
           <div>
             <Label htmlFor="phone">Phone Number</Label>
-            <Input id="phone" {...register("phone")} className={errors.phone ? "border-red-500" : ""} />
-            {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>}
+            <Input
+              id="phone"
+              {...register("phone")}
+              className={errors.phone ? "border-red-500" : ""}
+            />
+            {errors.phone && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.phone.message}
+              </p>
+            )}
           </div>
         </CardContent>
       </Card>
@@ -94,25 +130,57 @@ export default function CheckoutForm({ onSubmit, isProcessing }: CheckoutFormPro
         <CardContent className="space-y-4">
           <div>
             <Label htmlFor="address">Street Address</Label>
-            <Textarea id="address" {...register("address")} className={errors.address ? "border-red-500" : ""} />
-            {errors.address && <p className="text-red-500 text-sm mt-1">{errors.address.message}</p>}
+            <Textarea
+              id="address"
+              {...register("address")}
+              className={errors.address ? "border-red-500" : ""}
+            />
+            {errors.address && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.address.message}
+              </p>
+            )}
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>
               <Label htmlFor="city">City</Label>
-              <Input id="city" {...register("city")} className={errors.city ? "border-red-500" : ""} />
-              {errors.city && <p className="text-red-500 text-sm mt-1">{errors.city.message}</p>}
+              <Input
+                id="city"
+                {...register("city")}
+                className={errors.city ? "border-red-500" : ""}
+              />
+              {errors.city && (
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.city.message}
+                </p>
+              )}
             </div>
             <div>
               <Label htmlFor="state">State</Label>
-              <Input id="state" {...register("state")} className={errors.state ? "border-red-500" : ""} />
-              {errors.state && <p className="text-red-500 text-sm mt-1">{errors.state.message}</p>}
+              <Input
+                id="state"
+                {...register("state")}
+                className={errors.state ? "border-red-500" : ""}
+              />
+              {errors.state && (
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.state.message}
+                </p>
+              )}
             </div>
             <div>
               <Label htmlFor="zipCode">ZIP Code</Label>
-              <Input id="zipCode" {...register("zipCode")} className={errors.zipCode ? "border-red-500" : ""} />
-              {errors.zipCode && <p className="text-red-500 text-sm mt-1">{errors.zipCode.message}</p>}
+              <Input
+                id="zipCode"
+                {...register("zipCode")}
+                className={errors.zipCode ? "border-red-500" : ""}
+              />
+              {errors.zipCode && (
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.zipCode.message}
+                </p>
+              )}
             </div>
           </div>
         </CardContent>
@@ -124,7 +192,11 @@ export default function CheckoutForm({ onSubmit, isProcessing }: CheckoutFormPro
           <CardTitle>Payment Method</CardTitle>
         </CardHeader>
         <CardContent>
-          <RadioGroup value={paymentMethod} onValueChange={handlePaymentMethodChange} className="space-y-4">
+          <RadioGroup
+            value={paymentMethod}
+            onValueChange={handlePaymentMethodChange}
+            className="space-y-4"
+          >
             <div className="flex items-center space-x-2">
               <RadioGroupItem value="card" id="card" />
               <Label htmlFor="card">Credit/Debit Card (Paystack)</Label>
@@ -147,13 +219,21 @@ export default function CheckoutForm({ onSubmit, isProcessing }: CheckoutFormPro
           <CardTitle>Special Instructions (Optional)</CardTitle>
         </CardHeader>
         <CardContent>
-          <Textarea {...register("specialInstructions")} placeholder="Any special delivery instructions..." />
+          <Textarea
+            {...register("specialInstructions")}
+            placeholder="Any special delivery instructions..."
+          />
         </CardContent>
       </Card>
 
-      <Button type="submit" size="lg" className="w-full" disabled={isProcessing}>
+      <Button
+        type="submit"
+        size="lg"
+        className="w-full"
+        disabled={isProcessing}
+      >
         {isProcessing ? "Processing Order..." : "Place Order"}
       </Button>
     </form>
-  )
+  );
 }

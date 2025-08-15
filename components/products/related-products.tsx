@@ -1,25 +1,25 @@
-import ProductCard from "./product-card"
+import ProductCard from "./product-card";
 
 interface Product {
-  id: string
-  name: string
-  price: number
-  originalPrice?: number
-  image: string
-  category: string
-  rating: number
-  reviewCount: number
-  isNew?: boolean
-  isFeatured?: boolean
+  id: string;
+  name: string;
+  price: number;
+  originalPrice?: number;
+  image: string;
+  category: string;
+  rating: number;
+  reviewCount: number;
+  isNew?: boolean;
+  isFeatured?: boolean;
 }
 
 interface RelatedProductsProps {
-  products: Product[]
+  products: Product[];
 }
 
 export default function RelatedProducts({ products }: RelatedProductsProps) {
   if (products.length === 0) {
-    return null
+    return null;
   }
 
   return (
@@ -33,5 +33,5 @@ export default function RelatedProducts({ products }: RelatedProductsProps) {
         </div>
       </div>
     </section>
-  )
+  );
 }

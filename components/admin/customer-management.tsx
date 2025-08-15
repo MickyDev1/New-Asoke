@@ -18,7 +18,7 @@ export default function CustomerManagement() {
       orders: 5,
       totalSpent: 425000,
       status: "active",
-      joinDate: "2023-12-01",
+      joinDate: "2025-12-01",
     },
     {
       id: "2",
@@ -28,7 +28,7 @@ export default function CustomerManagement() {
       orders: 3,
       totalSpent: 185000,
       status: "active",
-      joinDate: "2024-01-05",
+      joinDate: "2025-01-05",
     },
     {
       id: "3",
@@ -38,7 +38,7 @@ export default function CustomerManagement() {
       orders: 1,
       totalSpent: 85000,
       status: "inactive",
-      joinDate: "2024-01-10",
+      joinDate: "2025-01-10",
     },
   ])
 
