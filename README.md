@@ -1,30 +1,42 @@
-# ECommerce website requirements
+# New Asoke
 
-*Automatically synced with your [v0.dev](https://v0.dev) deployments*
+Welcome to the **New Asoke** project! This repository contains resources and code for managing and showcasing Asooke (Aso Oke) textiles.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/micky-devs-projects/v0-ec-ommerce-website-requirements)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/Tn0vk6Zx8dY)
+## Features
 
-## Overview
+- Catalog and display Asooke products
+- Manage product details and images
+- Responsive design for various devices
 
-This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
+<!-- ## Getting Started
 
-## Deployment
+1. **Clone the repository:**
+    ```bash
+    git clone https://github.com/yourusername/New-Asoke.git
+    ```
+2. **Install dependencies:**
+    ```bash
+    npm install
+    ```
+3. **Run the project:**
+    ```bash
+    npm start
+    ```
 
-Your project is live at:
+## Folder Structure
 
-**[https://vercel.com/micky-devs-projects/v0-ec-ommerce-website-requirements](https://vercel.com/micky-devs-projects/v0-ec-ommerce-website-requirements)**
+- `/src` - Source code
+- `/public` - Static assets
+- `/docs` - Documentation
 
-## Build your app
+## Contributing
 
-Continue building your app on:
+Contributions are welcome! Please open issues or submit pull requests for improvements.
 
-**[https://v0.dev/chat/projects/Tn0vk6Zx8dY](https://v0.dev/chat/projects/Tn0vk6Zx8dY)**
+## License
 
-## How It Works
+This project is licensed under the MIT License.
 
-1. Create and modify your project using [v0.dev](https://v0.dev)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+## Contact
+
+For questions or feedback, please contact [your-email@example.com](mailto:your-email@example.com). -->

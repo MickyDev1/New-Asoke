@@ -1,23 +1,23 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import { Search, ShoppingCart, User, Menu, X } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Badge } from "@/components/ui/badge"
-import { useCart } from "@/lib/cart-context"
-import { useAuth } from "@/lib/auth-context"
-import CartDrawer from "@/components/cart/cart-drawer"
-import UserMenu from "@/components/auth/user-menu"
+import { useState } from "react";
+import Link from "next/link";
+import { Search, ShoppingCart, User, Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Badge } from "@/components/ui/badge";
+import { useCart } from "@/lib/cart-context";
+import { useAuth } from "@/lib/auth-context";
+import CartDrawer from "@/components/cart/cart-drawer";
+import UserMenu from "@/components/auth/user-menu";
 
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [isCartOpen, setIsCartOpen] = useState(false)
-  const { items } = useCart()
-  const { user } = useAuth()
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const { items } = useCart();
+  const { user } = useAuth();
 
-  const totalItems = items.reduce((sum, item) => sum + item.quantity, 0)
+  const totalItems = items.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
     <>
@@ -27,8 +27,8 @@ export default function Header() {
           <div className="flex items-center justify-between py-2 text-sm text-gray-600 border-b">
             <div>Free shipping on orders over ₦50,000</div>
             <div className="flex items-center gap-4">
-              <span>📞 +234 800 123 4567</span>
-              <span>📧 support@stylehub.ng</span>
+              <span>📞 +234 803 351 9937</span>
+              <span>📧 oladelemichael587@gmail.com</span>
             </div>
           </div>
 
@@ -42,7 +42,11 @@ export default function Header() {
             {/* Search bar - Desktop */}
             <div className="hidden md:flex flex-1 max-w-md mx-8">
               <div className="relative w-full">
-                <Input type="search" placeholder="Search products..." className="pl-10" />
+                <Input
+                  type="search"
+                  placeholder="Search products..."
+                  className="pl-10"
+                />
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
               </div>
             </div>
@@ -62,7 +66,12 @@ export default function Header() {
               )}
 
               {/* Cart */}
-              <Button variant="ghost" size="sm" className="relative" onClick={() => setIsCartOpen(true)}>
+              <Button
+                variant="ghost"
+                size="sm"
+                className="relative"
+                onClick={() => setIsCartOpen(true)}
+              >
                 <ShoppingCart className="h-4 w-4" />
                 {totalItems > 0 && (
                   <Badge className="absolute -top-2 -right-2 h-5 w-5 rounded-full p-0 flex items-center justify-center text-xs">
@@ -72,8 +81,17 @@ export default function Header() {
               </Button>
 
               {/* Mobile menu toggle */}
-              <Button variant="ghost" size="sm" className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-                {isMenuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+              <Button
+                variant="ghost"
+                size="sm"
+                className="md:hidden"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+              >
+                {isMenuOpen ? (
+                  <X className="h-4 w-4" />
+                ) : (
+                  <Menu className="h-4 w-4" />
+                )}
               </Button>
             </div>
           </div>
@@ -83,19 +101,34 @@ export default function Header() {
             <Link href="/shop" className="hover:text-primary transition-colors">
               All Products
             </Link>
-            <Link href="/shop?category=men" className="hover:text-primary transition-colors">
+            <Link
+              href="/shop?category=men"
+              className="hover:text-primary transition-colors"
+            >
               Men
             </Link>
-            <Link href="/shop?category=women" className="hover:text-primary transition-colors">
+            <Link
+              href="/shop?category=women"
+              className="hover:text-primary transition-colors"
+            >
               Women
             </Link>
-            <Link href="/shop?category=aso-oke" className="hover:text-primary transition-colors">
+            <Link
+              href="/shop?category=aso-oke"
+              className="hover:text-primary transition-colors"
+            >
               Aso-Oke
             </Link>
-            <Link href="/shop?category=shoes" className="hover:text-primary transition-colors">
+            <Link
+              href="/shop?category=shoes"
+              className="hover:text-primary transition-colors"
+            >
               Shoes
             </Link>
-            <Link href="/shop?category=accessories" className="hover:text-primary transition-colors">
+            <Link
+              href="/shop?category=accessories"
+              className="hover:text-primary transition-colors"
+            >
               Accessories
             </Link>
           </nav>
@@ -108,29 +141,51 @@ export default function Header() {
               {/* Mobile search */}
               <div className="mb-4">
                 <div className="relative">
-                  <Input type="search" placeholder="Search products..." className="pl-10" />
+                  <Input
+                    type="search"
+                    placeholder="Search products..."
+                    className="pl-10"
+                  />
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
                 </div>
               </div>
 
               {/* Mobile navigation */}
               <nav className="flex flex-col gap-4">
-                <Link href="/shop" className="hover:text-primary transition-colors">
+                <Link
+                  href="/shop"
+                  className="hover:text-primary transition-colors"
+                >
                   All Products
                 </Link>
-                <Link href="/shop?category=men" className="hover:text-primary transition-colors">
+                <Link
+                  href="/shop?category=men"
+                  className="hover:text-primary transition-colors"
+                >
                   Men
                 </Link>
-                <Link href="/shop?category=women" className="hover:text-primary transition-colors">
+                <Link
+                  href="/shop?category=women"
+                  className="hover:text-primary transition-colors"
+                >
                   Women
                 </Link>
-                <Link href="/shop?category=aso-oke" className="hover:text-primary transition-colors">
+                <Link
+                  href="/shop?category=aso-oke"
+                  className="hover:text-primary transition-colors"
+                >
                   Aso-Oke
                 </Link>
-                <Link href="/shop?category=shoes" className="hover:text-primary transition-colors">
+                <Link
+                  href="/shop?category=shoes"
+                  className="hover:text-primary transition-colors"
+                >
                   Shoes
                 </Link>
-                <Link href="/shop?category=accessories" className="hover:text-primary transition-colors">
+                <Link
+                  href="/shop?category=accessories"
+                  className="hover:text-primary transition-colors"
+                >
                   Accessories
                 </Link>
               </nav>
@@ -141,5 +196,5 @@ export default function Header() {
 
       <CartDrawer isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
     </>
-  )
+  );
 }
