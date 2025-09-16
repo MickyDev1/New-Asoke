@@ -16,17 +16,17 @@ export async function generateMetadata({ params }: ProductPageProps) {
 
   if (!product) {
     return {
-      title: "Product Not Found",
+      title: "No Product Found - God's Grace Aso-Oke",
     };
   }
 
   return {
-    title: `${product.name} - StyleHub`,
+    title: `${product.name} - God's Grace Aso-Oke`,
     description: product.description,
     openGraph: {
       title: product.name,
       description: product.description,
-      images: [product.image],
+      images: [product.images[0]],
     },
   };
 }

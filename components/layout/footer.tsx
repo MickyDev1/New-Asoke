@@ -123,7 +123,7 @@ export default function Footer() {
                   Shipping Info
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   href="/returns"
                   className="hover:text-white transition-colors"
@@ -146,7 +146,7 @@ export default function Footer() {
                 >
                   FAQ
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
                   href="/track-order"
