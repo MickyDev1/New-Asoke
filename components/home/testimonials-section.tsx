@@ -10,7 +10,7 @@ const testimonials = [
     rating: 5,
     comment:
       "The Aso-Oke quality is exceptional! I received so many compliments at my wedding. StyleHub truly delivers authentic Nigerian fashion.",
-    image: "/placeholder.svg?height=80&width=80",
+    image: "../../public/images/micky_dev.jpg",
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ const testimonials = [
     rating: 5,
     comment:
       "Fast delivery and excellent customer service. The agbada I ordered fit perfectly and the fabric quality exceeded my expectations.",
-    image: "/placeholder.svg?height=80&width=80",
+    image: "../../public/images/micky_dev.jpg",
   },
   {
     id: 3,
@@ -28,7 +28,7 @@ const testimonials = [
     rating: 5,
     comment:
       "Love the variety of designs! StyleHub has become my go-to for traditional and modern African fashion. Highly recommended!",
-    image: "/placeholder.svg?height=80&width=80",
+    image: "../../public/images/WhatsApp Image 2025-07-04 at 11.08.43_5fe8bde9.jpg",
   },
 ];
 
