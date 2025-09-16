@@ -12,8 +12,8 @@ export default function OrderManagement() {
   const [orders] = useState([
     {
       id: "ORD-001",
-      customer: "John Doe",
-      email: "john@example.com",
+      customer: "Micky Dev",
+      email: "micky@example.com",
       total: 85000,
       status: "pending",
       date: "2025-01-15",
@@ -21,8 +21,8 @@ export default function OrderManagement() {
     },
     {
       id: "ORD-002",
-      customer: "Jane Smith",
-      email: "jane@example.com",
+      customer: "Micky Dev",
+      email: "micky@example.com",
       total: 35000,
       status: "shipped",
       date: "2025-01-14",
@@ -30,8 +30,8 @@ export default function OrderManagement() {
     },
     {
       id: "ORD-003",
-      customer: "Mike Johnson",
-      email: "mike@example.com",
+      customer: "Micky Dev",
+      email: "micky@example.com",
       total: 120000,
       status: "delivered",
       date: "2025-01-13",

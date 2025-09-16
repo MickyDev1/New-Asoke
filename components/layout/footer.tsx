@@ -18,7 +18,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-2xl font-bold mb-4">StyleHub</h3>
+            <h3 className="text-2xl font-bold mb-4">God's Grace Aso-Oke</h3>
             <p className="text-gray-300 mb-4">
               Your premier destination for authentic Nigerian fashion, Aso-Oke,
               and premium accessories.
@@ -164,7 +164,7 @@ export default function Footer() {
             <div className="space-y-3 text-gray-300">
               <div className="flex items-center">
                 <Phone className="h-4 w-4 mr-2" />
-                <span>+234 803 351 9937</span>
+                <span>+234 912 1166 895</span>
               </div>
               <div className="flex items-center">
                 <Mail className="h-4 w-4 mr-2" />
@@ -200,7 +200,7 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className="flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm">
-          <p>&copy; 2025 StyleHub. All rights reserved.</p>
+          <p>&copy; 2025 God's Grace Aso-Oke. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link
               href="/privacy"

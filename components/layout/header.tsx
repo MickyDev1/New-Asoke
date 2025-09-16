@@ -27,7 +27,7 @@ export default function Header() {
           <div className="flex items-center justify-between py-2 text-sm text-gray-600 border-b">
             <div>Free shipping on orders over ₦50,000</div>
             <div className="flex items-center gap-4">
-              <span>📞 +234 803 351 9937</span>
+              <span>📞 +234 912 1166 895</span>
               <span>📧 oladelemichael587@gmail.com</span>
             </div>
           </div>
@@ -36,7 +36,7 @@ export default function Header() {
           <div className="flex items-center justify-between py-4">
             {/* Logo */}
             <Link href="/" className="text-2xl font-bold text-primary">
-              StyleHub
+              God's Grace Aso-Oke
             </Link>
 
             {/* Search bar - Desktop */}

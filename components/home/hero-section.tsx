@@ -31,8 +31,8 @@ const slides = [
     title: "Premium Footwear",
     subtitle: "Step Into Style",
     description: "Quality shoes for every occasion and style",
-    image: "/placeholder.svg?height=600&width=1200",
-    cta: "Shop Shoes",
+    image: "../../public/images/shoes.png",
+    cta: "Shop for your shoes here!",
     link: "/shop?category=shoes",
   },
 ];

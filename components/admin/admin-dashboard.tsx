@@ -21,9 +21,9 @@ export default function AdminDashboard() {
   }
 
   const recentOrders = [
-    { id: "1", customer: "John Doe", total: 45000, status: "pending" },
-    { id: "2", customer: "Jane Smith", total: 32000, status: "shipped" },
-    { id: "3", customer: "Mike Johnson", total: 78000, status: "delivered" },
+    { id: "1", customer: "Micky Dev", total: 45000, status: "pending" },
+    { id: "2", customer: "Micky Dev", total: 32000, status: "shipped" },
+    { id: "3", customer: "Micky Dev", total: 78000, status: "delivered" },
   ]
 
   return (
