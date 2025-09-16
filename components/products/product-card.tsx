@@ -59,7 +59,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         <Link href={`/products/${product.id}`}>
           <div className="relative aspect-square overflow-hidden rounded-t-lg">
             <Image
-              src={product.image || "/placeholder.svg"}
+              src={product.image || "../../public/images/6827f8b3-a805-4051-903a-3cb32fb83f12.jpeg"}
               alt={product.name}
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-300"

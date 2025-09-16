@@ -12,9 +12,9 @@ export default function CustomerManagement() {
   const [customers] = useState([
     {
       id: "1",
-      name: "John Doe",
-      email: "john@example.com",
-      phone: "+234 801 234 5678",
+      name: "Micky Dev",
+      email: "micky@example.com",
+      phone: "+234 912 116 895",
       orders: 5,
       totalSpent: 425000,
       status: "active",
@@ -22,9 +22,9 @@ export default function CustomerManagement() {
     },
     {
       id: "2",
-      name: "Jane Smith",
-      email: "jane@example.com",
-      phone: "+234 802 345 6789",
+      name: "Micky Dev",
+      email: "micky@example.com",
+      phone: "+234 912 116 895",
       orders: 3,
       totalSpent: 185000,
       status: "active",
@@ -32,9 +32,9 @@ export default function CustomerManagement() {
     },
     {
       id: "3",
-      name: "Mike Johnson",
-      email: "mike@example.com",
-      phone: "+234 803 456 7890",
+      name: "Micky Dev",
+      email: "micky@example.com",
+      phone: "+234 912 116 895",
       orders: 1,
       totalSpent: 85000,
       status: "inactive",
