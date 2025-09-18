@@ -1,11 +1,18 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
-import { Eye, Package } from "lucide-react"
+import { useState } from "react";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import { Eye, Package } from "lucide-react";
 
 export default function OrderManagement() {
   // Mock orders data
@@ -37,22 +44,22 @@ export default function OrderManagement() {
       date: "2025-01-13",
       items: 3,
     },
-  ])
+  ]);
 
   const getStatusColor = (status: string) => {
     switch (status) {
       case "pending":
-        return "outline"
+        return "outline";
       case "shipped":
-        return "secondary"
+        return "secondary";
       case "delivered":
-        return "default"
+        return "default";
       case "cancelled":
-        return "destructive"
+        return "destructive";
       default:
-        return "outline"
+        return "outline";
     }
-  }
+  };
 
   return (
     <Card>
@@ -85,7 +92,9 @@ export default function OrderManagement() {
                 <TableCell>{order.items}</TableCell>
                 <TableCell>₦{order.total.toLocaleString()}</TableCell>
                 <TableCell>
-                  <Badge variant={getStatusColor(order.status)}>{order.status}</Badge>
+                  <Badge variant={getStatusColor(order.status)}>
+                    {order.status}
+                  </Badge>
                 </TableCell>
                 <TableCell>{order.date}</TableCell>
                 <TableCell>
@@ -104,5 +113,5 @@ export default function OrderManagement() {
         </Table>
       </CardContent>
     </Card>
-  )
+  );
 }
