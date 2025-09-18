@@ -1,11 +1,18 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
-import { Eye, Mail } from "lucide-react"
+import { useState } from "react";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import { Eye, Mail } from "lucide-react";
 
 export default function CustomerManagement() {
   // Mock customers data
@@ -40,7 +47,7 @@ export default function CustomerManagement() {
       status: "inactive",
       joinDate: "2025-01-10",
     },
-  ])
+  ]);
 
   return (
     <Card>
@@ -73,7 +80,13 @@ export default function CustomerManagement() {
                 <TableCell>{customer.orders}</TableCell>
                 <TableCell>₦{customer.totalSpent.toLocaleString()}</TableCell>
                 <TableCell>
-                  <Badge variant={customer.status === "active" ? "default" : "secondary"}>{customer.status}</Badge>
+                  <Badge
+                    variant={
+                      customer.status === "active" ? "default" : "secondary"
+                    }
+                  >
+                    {customer.status}
+                  </Badge>
                 </TableCell>
                 <TableCell>{customer.joinDate}</TableCell>
                 <TableCell>
@@ -92,5 +105,5 @@ export default function CustomerManagement() {
         </Table>
       </CardContent>
     </Card>
-  )
+  );
 }
