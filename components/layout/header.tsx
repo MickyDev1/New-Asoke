@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Search, ShoppingCart, User, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -14,24 +14,39 @@ import UserMenu from "@/components/auth/user-menu";
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [visible, setVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
   const { items } = useCart();
   const { user } = useAuth();
 
   const totalItems = items.reduce((sum, item) => sum + item.quantity, 0);
 
+  // Scroll listener to hide/show header
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > lastScrollY && window.scrollY > 80) {
+        // scrolling down, hide
+        setVisible(false);
+      } else {
+        // scrolling up, show
+        setVisible(true);
+      }
+      setLastScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
+
   return (
     <>
-      <header className="sticky top-0 z-50 bg-white border-b shadow-sm">
+      <header
+        className={`fixed top-0 left-0 w-full z-50 bg-white border-b shadow-sm transition-transform duration-300 ${
+          visible ? "translate-y-0" : "-translate-y-full"
+        }`}
+      >
         <div className="container mx-auto px-4">
-          {/* Top bar */}
-          <div className="flex items-center justify-between py-2 text-sm text-gray-600 border-b">
-            <div>Free shipping on orders over ₦50,000</div>
-            <div className="flex items-center gap-4">
-              <span>📞 +234 912 1166 895</span>
-              <span>📧 oladelemichael587@gmail.com</span>
-            </div>
-          </div>
-
           {/* Main header */}
           <div className="flex items-center justify-between py-4">
             {/* Logo */}
@@ -194,6 +209,7 @@ export default function Header() {
         )}
       </header>
 
+      {/* Cart Drawer */}
       <CartDrawer isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
     </>
   );

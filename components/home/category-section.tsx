@@ -35,7 +35,7 @@ export default function CategorySection({ categories }: CategorySectionProps) {
                 <CardContent className="p-0">
                   <div className="relative aspect-square overflow-hidden rounded-t-lg">
                     <Image
-                      src={category.image || "/placeholder.svg"}
+                      src={category.image || "/public/images/Product1.jpeg"}
                       alt={category.name}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-300"

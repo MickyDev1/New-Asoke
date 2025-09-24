@@ -1,14 +1,12 @@
-// Mock API functions - replace with real database calls
-
 export async function getFeaturedProducts() {
-  // Mock data
+  
   return [
     {
       id: "1",
       name: "Premium Aso-Oke Agbada",
       price: 85000,
       originalPrice: 100000,
-      image: "/placeholder.svg?height=400&width=400",
+      image: "/images/6827f8b3-a805-4051-903a-3cb32fb83f12.jpeg",
       category: "Aso-Oke",
       rating: 4.8,
       reviewCount: 24,
@@ -19,7 +17,7 @@ export async function getFeaturedProducts() {
       id: "2",
       name: "Designer Ankara Dress",
       price: 35000,
-      image: "/placeholder.svg?height=400&width=400",
+      image: "/images/6827f8b3-a805-4051-903a-3cb32fb83f12.jpeg",
       category: "Women",
       rating: 4.6,
       reviewCount: 18,
@@ -30,7 +28,7 @@ export async function getFeaturedProducts() {
       name: "Leather Oxford Shoes",
       price: 45000,
       originalPrice: 55000,
-      image: "/placeholder.svg?height=400&width=400",
+      image: "/images/shoes.jpg",
       category: "Shoes",
       rating: 4.9,
       reviewCount: 32,
@@ -40,7 +38,7 @@ export async function getFeaturedProducts() {
       id: "4",
       name: "Traditional Gele Headwrap",
       price: 15000,
-      image: "/placeholder.svg?height=400&width=400",
+      image: "/images/cap.jpg",
       category: "Accessories",
       rating: 4.7,
       reviewCount: 15,
@@ -56,7 +54,7 @@ export async function getCategories() {
       id: "1",
       name: "Men",
       slug: "men",
-      image: "/placeholder.svg?height=300&width=300",
+      image: "/images/6827f8b3-a805-4051-903a-3cb32fb83f12.jpeg",
       productCount: 45,
     },
     {
@@ -70,14 +68,14 @@ export async function getCategories() {
       id: "3",
       name: "Aso-Oke",
       slug: "aso-oke",
-      image: "/placeholder.svg?height=300&width=300",
+      image: "/images/aso-oke.jpg",
       productCount: 23,
     },
     {
       id: "4",
       name: "Shoes",
       slug: "shoes",
-      image: "/placeholder.svg?height=300&width=300",
+      image: "/images/shoes.jpg",
       productCount: 34,
     },
     {
@@ -106,16 +104,16 @@ export async function getProduct(id: string) {
     price: 85000,
     originalPrice: 100000,
     images: [
-      "/placeholder.svg?height=600&width=600",
-      "/placeholder.svg?height=600&width=600",
-      "/placeholder.svg?height=600&width=600",
+      "/images/6827f8b3-a805-4051-903a-3cb32fb83f12.jpeg",
+      "/images/6827f8b3-a805-4051-903a-3cb32fb83f12.jpeg",
+      "/images/6827f8b3-a805-4051-903a-3cb32fb83f12.jpeg",
     ],
     category: "Aso-Oke",
     rating: 4.8,
     reviewCount: 24,
-    inStock: true,
+    inStock: false,
     sizes: ["S", "M", "L", "XL", "XXL"],
-    colors: ["Royal Blue", "Gold", "Burgundy"],
+    colors: ["Royal Blue", "Gold", "White"],
     specifications: {
       Material: "Premium Aso-Oke Fabric",
       Origin: "Handwoven in Nigeria",

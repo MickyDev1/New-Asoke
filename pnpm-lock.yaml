@@ -137,6 +137,9 @@ importers:
       react-dom:
         specifier: ^18
         version: 18.0.0(react@18.0.0)
+      react-firebase-hooks:
+        specifier: ^5.1.1
+        version: 5.1.1(firebase@12.3.0)(react@18.0.0)
       react-hook-form:
         specifier: latest
         version: 7.61.1(react@18.0.0)
@@ -1883,6 +1886,12 @@ packages:
     resolution: {integrity: sha512-XqX7uzmFo0pUceWFCt7Gff6IyIMzFUn7QMZrbrQfGxtaxXZIcGQzoNpRLE3fQLnS4XzLLPMZX2T9TRcSrasicw==}
     peerDependencies:
       react: ^18.0.0
+
+  react-firebase-hooks@5.1.1:
+    resolution: {integrity: sha512-y2UpWs82xs+39q5Rc/wq316ca52QsC0n8m801V+yM4IC4hbfOL4yQPVSh7w+ydstdvjN9F+lvs1WrO2VYxpmdA==}
+    peerDependencies:
+      firebase: '>= 9.0.0'
+      react: '>= 16.8.0'
 
   react-hook-form@7.61.1:
     resolution: {integrity: sha512-2vbXUFDYgqEgM2RcXcAT2PwDW/80QARi+PKmHy5q2KhuKvOlG8iIYgf7eIlIANR5trW9fJbP4r5aub3a4egsew==}
@@ -3977,6 +3986,11 @@ snapshots:
       loose-envify: 1.4.0
       react: 18.0.0
       scheduler: 0.21.0
+
+  react-firebase-hooks@5.1.1(firebase@12.3.0)(react@18.0.0):
+    dependencies:
+      firebase: 12.3.0
+      react: 18.0.0
 
   react-hook-form@7.61.1(react@18.0.0):
     dependencies:

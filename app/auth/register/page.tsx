@@ -10,8 +10,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { useToast } from "@/hooks/use-toast"
-import { auth } from "@/app/firebase/config"
-import { createUserWithEmailAndPassword } from "firebase/auth"
+import {auth} from "@/app/firebase/config"
 
 export default function RegisterPage() {
   const [formData, setFormData] = useState({
@@ -20,9 +19,6 @@ export default function RegisterPage() {
     password: "",
     confirmPassword: "",
   })
-
-// Removed incorrect hook usage; using imported createUserWithEmailAndPassword directly
-
   const [isLoading, setIsLoading] = useState(false)
   const { toast } = useToast()
   const router = useRouter()
@@ -49,17 +45,18 @@ export default function RegisterPage() {
     setIsLoading(true)
 
     try {
-      await createUserWithEmailAndPassword(auth, formData.email, formData.password)
+      // In a real app, you would call your registration API
+      await new Promise((resolve) => setTimeout(resolve, 1000)) // Simulate API call
 
       toast({
         title: "Account created!",
         description: "Your account has been created successfully. Please sign in.",
       })
       router.push("/auth/login")
-    } catch (error: any) {
+    } catch (error) {
       toast({
         title: "Registration failed",
-        description: error.message || "Something went wrong. Please try again.",
+        description: "Something went wrong. Please try again.",
         variant: "destructive",
       })
     } finally {

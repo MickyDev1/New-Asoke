@@ -36,7 +36,7 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
             <div className="flex-1 flex items-center justify-center">
               <div className="text-center">
                 <ShoppingBag className="h-12 w-12 text-gray-400 mx-auto mb-4" />
-                <p className="text-gray-500 mb-4">Your cart is empty</p>
+                <p className="text-gray-500 mb-4">Your cart is empty!</p>
                 <Button onClick={onClose}>
                   <Link href="/shop">Continue Shopping</Link>
                 </Button>
