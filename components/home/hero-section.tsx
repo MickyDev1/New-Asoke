@@ -56,7 +56,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative h-[70vh] md:h-[80vh] overflow-hidden">
+    <section className="relative h-[70vh] md:h-[98vh] overflow-hidden">
       {slides.map((slide, index) => (
         <div
           key={slide.id}
@@ -69,7 +69,7 @@ export default function HeroSection() {
           }`}
         >
           <Image
-            src={slide.image || "/placeholder.svg"}
+            src={slide.image || "/public/images/hero.jpeg"}
             alt={slide.title}
             fill
             className="object-cover"
