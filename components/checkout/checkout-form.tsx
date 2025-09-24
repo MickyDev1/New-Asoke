@@ -205,10 +205,10 @@ export default function CheckoutForm({
               <RadioGroupItem value="bank_transfer" id="bank_transfer" />
               <Label htmlFor="bank_transfer">Bank Transfer</Label>
             </div>
-            <div className="flex items-center space-x-2">
+            {/* <div className="flex items-center space-x-2">
               <RadioGroupItem value="pay_on_delivery" id="pay_on_delivery" />
               <Label htmlFor="pay_on_delivery">Pay on Delivery</Label>
-            </div>
+            </div> */}
           </RadioGroup>
         </CardContent>
       </Card>
@@ -216,7 +216,7 @@ export default function CheckoutForm({
       {/* Special Instructions */}
       <Card>
         <CardHeader>
-          <CardTitle>Special Instructions (Optional)</CardTitle>
+          <CardTitle>Special Instructions for rider (Optional)</CardTitle>
         </CardHeader>
         <CardContent>
           <Textarea

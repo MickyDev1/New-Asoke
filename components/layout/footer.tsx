@@ -34,7 +34,7 @@ export default function Footer() {
               <Button
                 variant="ghost"
                 size="sm"
-                className="text-white hover:text-gray-300"
+                className="text-white hover:text-blue-700"
               >
                 <Instagram className="h-5 w-5" />
               </Button>
@@ -92,14 +92,14 @@ export default function Footer() {
                   Shoes
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   href="/about"
                   className="hover:text-white transition-colors"
                 >
                   About Us
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
 
@@ -178,10 +178,10 @@ export default function Footer() {
           </div>
         </div>
 
-        <Separator className="my-8 bg-gray-700" />
+        {/* <Separator className="my-8 bg-gray-700" /> */}
 
         {/* Newsletter */}
-        <div className="text-center mb-8">
+        {/* <div className="text-center mb-8">
           <h4 className="font-semibold mb-2">Subscribe to Our Newsletter</h4>
           <p className="text-gray-300 mb-4">
             Get the latest updates on new arrivals and exclusive offers
@@ -194,7 +194,7 @@ export default function Footer() {
             />
             <Button className="ml-2">Subscribe</Button>
           </div>
-        </div>
+        </div> */}
 
         <Separator className="my-8 bg-gray-700" />
 
@@ -211,12 +211,12 @@ export default function Footer() {
             <Link href="/terms" className="hover:text-white transition-colors">
               Terms of Service
             </Link>
-            <Link
+            {/* <Link
               href="/cookies"
               className="hover:text-white transition-colors"
             >
               Cookie Policy
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>

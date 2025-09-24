@@ -4,12 +4,6 @@ export async function POST(request: Request) {
   try {
     const { email, password } = await request.json()
 
-    // In a real app, you would:
-    // 1. Validate credentials against database
-    // 2. Create session/JWT token
-    // 3. Set secure cookies
-
-    // For demo purposes, simulate successful login
     if (email && password) {
       const user = {
         id: "demo-user-" + Date.now(),

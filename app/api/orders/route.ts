@@ -4,14 +4,7 @@ export async function POST(request: NextRequest) {
   try {
     const orderData = await request.json()
 
-    // Here you would typically:
-    // 1. Validate the order data
-    // 2. Save to database
-    // 3. Process payment
-    // 4. Send confirmation email
-    // 5. Update inventory
-
-    // Mock order creation
+   
     const order = {
       id: `ORD-${Date.now()}`,
       ...orderData,

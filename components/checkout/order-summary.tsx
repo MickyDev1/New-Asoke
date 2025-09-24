@@ -93,7 +93,7 @@ export default function OrderSummary({ items, total }: OrderSummaryProps) {
 
         {shipping === 0 && (
           <div className="text-xs text-green-600 bg-green-50 p-2 rounded">
-            🎉 You qualify for free shipping!
+            🎉 You are qualified for free shipping!
           </div>
         )}
       </CardContent>

@@ -79,7 +79,7 @@ export default function UserMenu({ user }: UserMenuProps) {
         <DropdownMenuItem asChild>
           <Link href="/orders" className="cursor-pointer">
             <Package className="mr-2 h-4 w-4" />
-            <span>My Orders</span>
+            <span>Orders</span>
           </Link>
         </DropdownMenuItem>
 
@@ -87,7 +87,7 @@ export default function UserMenu({ user }: UserMenuProps) {
           <DropdownMenuItem asChild>
             <Link href="/admin" className="cursor-pointer">
               <Settings className="mr-2 h-4 w-4" />
-              <span>Admin Dashboard</span>
+              <span>Admin</span>
             </Link>
           </DropdownMenuItem>
         )}
@@ -100,7 +100,7 @@ export default function UserMenu({ user }: UserMenuProps) {
           disabled={isLoading}
         >
           <LogOut className="mr-2 h-4 w-4" />
-          <span>{isLoading ? "Signing out..." : "Sign out"}</span>
+          <span>{isLoading ? "Signing out" : "Sign out"}</span>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

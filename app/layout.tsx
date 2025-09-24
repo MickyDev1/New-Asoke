@@ -17,7 +17,6 @@ export const metadata: Metadata = {
     description: "Discover premium fashion, Aso-Oke, shoes and accessories",
     type: "website",
   },
-    generator: 'v0.dev'
 }
 
 export default function RootLayout({
