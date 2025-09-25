@@ -8,6 +8,7 @@ import TestimonialsSection from "@/components/home/testimonials-section";
 import NewsletterSection from "@/components/home/newsletter-section";
 import { getFeaturedProducts, getCategories } from "@/lib/api";
 
+
 export default async function HomePage() {
   const [featuredProducts, categories] = await Promise.all([
     getFeaturedProducts(),
