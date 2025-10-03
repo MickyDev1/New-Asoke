@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: ProductPageProps) {
   }
 
   return {
-    title: `${product.name} - God's Grace Aso-Oke`,
+    title: `${product.name} - God's Grace  eAso-Oke`,
     description: product.description,
     openGraph: {
       title: product.name,
